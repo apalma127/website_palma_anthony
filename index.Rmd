@@ -1,0 +1,17 @@
+---
+title: "Anthony Palma"
+description: |
+  My Projects in R ... 
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+![](Palma_Anthony_headshot.jpg){width=200}
+
+## About Me:
+
+## Education: 

@@ -1,0 +1,23 @@
+---
+title: "Tidy Tuesday Work"
+description: |
+  All of my graphs from weekly Tidy Tuesday work
+author:
+  - name: Anthony Palma
+date: 09-07-2021
+preview: tt_image.jpeg
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Below are my assignments for the weekly Tidy Tuesday challenge.  
+
+
+
+

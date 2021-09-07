@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "path": "blog.html",
+      "title": "blog",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-09-07T18:34:04-05:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Anthony Palma",
+      "description": "My Projects in R ... \n",
+      "author": [],
+      "contents": "\n\nAbout Me:\nEducation:\n\n\n\n",
+      "last_modified": "2021-09-07T18:34:05-05:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

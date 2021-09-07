@@ -1,0 +1,18 @@
+name: "website"
+title: "Anthony Palma"
+description: |
+  My Projects in R
+output_dir: "_site"
+navbar:
+  logo:
+    image: ll.png
+  right:
+    - text: "About"
+      href: index.html
+    - text: "blog"
+      href: blog.html
+    - icon: fa fa-github
+      href: https://github.com/apalma127
+    - icon: fa fa-linkedin
+      href: https://www.linkedin.com/in/apalma2/
+output: distill::distill_article

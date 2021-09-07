@@ -1,0 +1,19 @@
+[
+  {
+    "path": "posts/2021-09-07-ttwork/",
+    "title": "Tidy Tuesday Work",
+    "description": "All of my graphs from weekly Tidy Tuesday work",
+    "author": [
+      {
+        "name": "Anthony Palma",
+        "url": {}
+      }
+    ],
+    "date": "2021-09-07",
+    "categories": [],
+    "contents": "\nBelow are my assignments for the weekly Tidy Tuesday challenge.\n\n\n\n",
+    "preview": "posts/2021-09-07-ttwork/tt_image.jpeg",
+    "last_modified": "2021-09-07T18:21:29-05:00",
+    "input_file": {}
+  }
+]
