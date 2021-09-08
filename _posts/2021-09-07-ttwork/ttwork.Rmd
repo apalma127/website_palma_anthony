@@ -9,14 +9,17 @@ preview: tt_image.jpeg
 output:
   distill::distill_article:
     self_contained: false
+
+Below are my assignments for the weekly Tidy Tuesday challenge.  
+
+Week #1:  Formula 1 Racing
+
+![](wk_1_image.png){width=200}
+
 ---
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
 
-Below are my assignments for the weekly Tidy Tuesday challenge.  
 
 
 
