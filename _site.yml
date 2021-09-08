@@ -16,3 +16,4 @@ navbar:
     - icon: fa fa-linkedin
       href: https://www.linkedin.com/in/apalma2/
 output: distill::distill_article
+theme: "anthony_theme.css"
