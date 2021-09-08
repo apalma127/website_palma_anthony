@@ -14,4 +14,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## About Me:
 
-## Education: 
+Hey!  My name is Anthony Palma, and I am an Applied Math/Stats and Political Science major and a Computer Science minor.  I attend Macalester College in St. Paul, MN where I am an active community member playing on the baseball team, being a part of student government, and being the senior representative on the college's Alumni Board.  I am originally from Mooresville, NC where I spend my summers playing baseball and doing internships.  
+
+
