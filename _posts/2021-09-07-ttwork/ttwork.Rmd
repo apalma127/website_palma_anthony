@@ -12,10 +12,9 @@ output:
 
 Below are my assignments for the weekly Tidy Tuesday challenge.  
 
-Week #1:  Formula 1 Racing
+# Week #1:  Formula 1 Racing
 
 ![](wk_1_image.png){width=200}
-
 ---
 
 

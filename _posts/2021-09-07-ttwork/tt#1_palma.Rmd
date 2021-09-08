@@ -1,0 +1,71 @@
+---
+title: 'Tidy Tuesday #1'
+author: "Palma"
+date: "9/7/2021"
+output: html_document
+---
+
+## Tidy Tuesday 1
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+```
+
+
+```{r}
+
+tuesdata <- tidytuesdayR::tt_load('2021-09-07')
+
+results <- tuesdata$results
+
+```
+
+**Question:  How does number of wins trend over the years for American drivers?**
+
+```{r}
+driver_results_df <- tuesdata$driver_standings %>% 
+  left_join(tuesdata$races, by = "raceId") %>% 
+  rename(driver_url = url) %>% 
+  left_join(tuesdata$drivers, by = "driverId")
+```
+
+
+```{r}
+driver_results_by_nationality <- driver_results_df %>%
+                                    group_by(nationality) 
+```
+
+```{r}
+df_Americans <- driver_results_by_nationality %>%
+            filter(nationality == "American") %>%
+            group_by(year) %>%
+            summarize(total_wins = sum(wins))
+
+```
+
+
+```{r}
+df_Americans
+```
+
+
+
+```{r}
+Americans <- df_Americans %>%
+    ggplot(aes(x = year, y = total_wins)) +
+    geom_line(color = "blue", size = 1) +
+    labs(x = "Year", y = "Total Wins", title = "USA Formula 1 Race Wins Over The Years -- by Anthony Palma") 
+
+```
+
+```{r}
+Americans + theme(
+  panel.background = element_rect(fill = "#BFD5E3", colour = "#6D9EC1", size = 2, linetype = "solid"))
+
+```
+
+## **Question:  How does number of wins trend over the years for American drivers?**
+
+# I am not a big F1 racing fan and was completely unaware of many American drivers being involved.  I assumed, as there are many other nationality drivers, that it was more of a European centered sport.  I chose to look at American wins over the years as I was curious to see how well American drivers have performed in a sport that I think is not super well known in America.  As I suspected, I would guess it is not as well knwon possibly because of the trend seen above.  With little American success (actually 0 wins since a bit before 1980), if someone wasn't an avid fan they most likely would not know much as opposed to more American-centric sports like football.  

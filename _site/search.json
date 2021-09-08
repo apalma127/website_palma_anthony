@@ -5,15 +5,15 @@
       "title": "blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-09-07T19:27:04-05:00"
+      "last_modified": "2021-09-07T19:41:49-05:00"
     },
     {
       "path": "index.html",
       "title": "Anthony Palma",
       "description": "My Projects in R ... \n",
       "author": [],
-      "contents": "\n\nAbout Me:\nEducation:\n\n\n\n",
-      "last_modified": "2021-09-07T19:27:05-05:00"
+      "contents": "\n\nAbout Me:\nHey! My name is Anthony Palma, and I am an Applied Math/Stats and Political Science major and a Computer Science minor. I attend Macalester College in St. Paul, MN where I am an active community member playing on the baseball team, being a part of student government, and being the senior representative on the college’s Alumni Board. I am originally from Mooresville, NC where I spend my summers playing baseball and doing internships.\n\n\n\n",
+      "last_modified": "2021-09-07T19:41:50-05:00"
     }
   ],
   "collections": ["posts/posts.json"]

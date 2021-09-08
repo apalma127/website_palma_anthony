@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-![](Palma_Anthony_headshot.jpg){width=200}
+![](Palma_Anthony_headshot.jpg){width=50, length=150}
 
 ## About Me:
 
