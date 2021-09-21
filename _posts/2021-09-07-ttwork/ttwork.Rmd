@@ -26,9 +26,6 @@ I am not a big F1 racing fan and was completely unaware of many American drivers
 I have heard of many songs going on and off the billboard top hits list.  I was curious as to how the speed to the top of the list is different from songs that only were popular for one stint compared to songs that went on and off the list many times, specifially on and off a lot of times.  As you can see, songs that are big hits one time only (ie on and off the list, not on and off several times) saw a very quick and steep rise to the top of the list (denoted by a steep slope down).  As the instance of the song increases, you can see less of a skew on the graph as opposed to the instance == 1 sharp right skew.  
 
 
----
-
-
 
 
 
