@@ -9,6 +9,7 @@ preview: tt_image.jpeg
 output:
   distill::distill_article:
     self_contained: false
+---
 
 Below are my assignments for the weekly Tidy Tuesday challenge.  
 
