@@ -21,18 +21,16 @@ library(dplyr)
 library(tidyverse)
 ```
 
-
 ```{r}
-tuesdata <- tidytuesdayR::tt_load('2021-09-07')
-results <- tuesdata$results
+tuesdata1 <- tidytuesdayR::tt_load('2021-09-07')
+results <- tuesdata1$results
 ```
 
-
 ```{r}
-driver_results_df <- tuesdata$driver_standings %>% 
-  left_join(tuesdata$races, by = "raceId") %>% 
+driver_results_df <- tuesdata1$driver_standings %>% 
+  left_join(tuesdata1$races, by = "raceId") %>% 
   rename(driver_url = url) %>% 
-  left_join(tuesdata$drivers, by = "driverId")
+  left_join(tuesdata1$drivers, by = "driverId")
 ```
 
 
@@ -78,8 +76,8 @@ library(tidytuesdayR)
 
 
 ```{r}
-tuesdata <- tidytuesdayR::tt_load('2021-09-14')
-billboard <- tuesdata$billboard
+tuesdata2 <- tidytuesdayR::tt_load('2021-09-14')
+billboard <- tuesdata2$billboard
 
 ```
 
@@ -124,9 +122,9 @@ library(rvest)
 ```
 
 ```{r}
-tuesdata <- tidytuesdayR::tt_load('2021-09-21')
+tuesdata3 <- tidytuesdayR::tt_load('2021-09-21')
 
-nominees <- tuesdata$nominees
+nominees <- tuesdata3$nominees
 ```
 
 ```{r}
