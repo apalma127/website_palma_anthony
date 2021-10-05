@@ -24,3 +24,13 @@ I am not a big F1 racing fan and was completely unaware of many American drivers
 ![](wk_2_image.png){width=200}
 
 I have heard of many songs going on and off the billboard top hits list.  I was curious as to how the speed to the top of the list is different for songs that only were popular for one stint compared to songs that went on and off the list many times, specifically on and off a lot of times.  As you can see, songs that are big hits one time only (ie on and off the list, not on and off several times) saw a very quick and steep rise to the top of the list (denoted by a steep slope down w massive y axis scale).  As the instance of the song increases, you can see less of a skew on the graph as opposed to the instance == 1 sharp right skew, denoting less of a rise beyond its initial instance.  Notice the free y axis scales and how even steeper rises to the top of the list (bottom of y axis) for increased instances does not compare in any way to the massive and exponential rise to the top of the list for instance == 1.  In summary, songs that are one hit wonders on the list skyrocket to the top with increased weeks on the chart resulting in higher peak position.  Songs that have been on the list already tend to start a bit higher on the list in its initial peak position yet as weeks go on, the rise to the top is wayyyyyy less drastic / evident (or even existent).     
+
+## Week 3: Emmy Awards
+
+![](wk_3_image.png){width=200}
+
+Netflix is my favorite streaming platform which has had dozens of major hits over the last couple years.  I was curious as to how their rise in binge-worthy shows over the pandemic would be reflected in a faceted graph looking at nomination and winner of category counts for their shows. To no surprise, their content quality increased as I perceived, which can be seen with the rapid rise in emmy nominated shows, peaking during the 2020 pandemic year (Note: 2021 was still very strong though).  Surprisingly, their winner of category graph doesn't actually peak where their nominations graph does....the winner graph peaks just a bit after in 2021.  This could be because some of the backend quality 2020 films/shows were after the 2020 awards or it also could be because Netflix limited production to just their top hits in 2021 maximizing performance of shows and minimzing loss in a tough economic situation...
+
+
+
+
