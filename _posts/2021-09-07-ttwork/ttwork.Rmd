@@ -4,7 +4,7 @@ description: |
   All of my graphs from weekly Tidy Tuesday work
 author:
   - name: Anthony Palma
-date: 09-21-2021
+date: 10-05-2021
 preview: tt_image.jpeg
 output:
   distill::distill_article:
