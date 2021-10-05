@@ -117,7 +117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["tt_image.jpeg","ttwork_files/anchor-4.2.2/anchor.min.js","ttwork_files/bowser-1.9.3/bowser.min.js","ttwork_files/distill-2.2.21/template.v2.js","ttwork_files/figure-html5/unnamed-chunk-7-1.png","ttwork_files/header-attrs-2.10/header-attrs.js","ttwork_files/header-attrs-2.11/header-attrs.js","ttwork_files/jquery-1.11.3/jquery.min.js","ttwork_files/jquery-3.6.0/jquery-3.6.0.js","ttwork_files/jquery-3.6.0/jquery-3.6.0.min.js","ttwork_files/jquery-3.6.0/jquery-3.6.0.min.map","ttwork_files/popper-2.6.0/popper.min.js","ttwork_files/tippy-6.2.7/tippy-bundle.umd.min.js","ttwork_files/tippy-6.2.7/tippy-light-border.css","ttwork_files/tippy-6.2.7/tippy.css","ttwork_files/tippy-6.2.7/tippy.umd.min.js","ttwork_files/webcomponents-2.0.0/webcomponents.js","wk_1_image.png","wk_2_image.png","wk_3_image.png"]}
+  {"type":"character","attributes":{},"value":["tt_image.jpeg","ttwork_files/anchor-4.2.2/anchor.min 2.js","ttwork_files/anchor-4.2.2/anchor.min.js","ttwork_files/bowser-1.9.3/bowser.min 2.js","ttwork_files/bowser-1.9.3/bowser.min.js","ttwork_files/distill-2.2.21/template.v2 2.js","ttwork_files/distill-2.2.21/template.v2.js","ttwork_files/figure-html5/unnamed-chunk-11-1.png","ttwork_files/figure-html5/unnamed-chunk-12-1.png","ttwork_files/figure-html5/unnamed-chunk-16-1.png","ttwork_files/figure-html5/unnamed-chunk-7-1.png","ttwork_files/header-attrs-2.10/header-attrs.js","ttwork_files/header-attrs-2.11/header-attrs 2.js","ttwork_files/header-attrs-2.11/header-attrs.js","ttwork_files/jquery-1.11.3/jquery.min.js","ttwork_files/jquery-3.6.0/jquery-3.6.0 2.js","ttwork_files/jquery-3.6.0/jquery-3.6.0.js","ttwork_files/jquery-3.6.0/jquery-3.6.0.min 2.js","ttwork_files/jquery-3.6.0/jquery-3.6.0.min 2.map","ttwork_files/jquery-3.6.0/jquery-3.6.0.min.js","ttwork_files/jquery-3.6.0/jquery-3.6.0.min.map","ttwork_files/popper-2.6.0/popper.min 2.js","ttwork_files/popper-2.6.0/popper.min.js","ttwork_files/tippy-6.2.7/tippy 2.css","ttwork_files/tippy-6.2.7/tippy-bundle.umd.min 2.js","ttwork_files/tippy-6.2.7/tippy-bundle.umd.min.js","ttwork_files/tippy-6.2.7/tippy-light-border 2.css","ttwork_files/tippy-6.2.7/tippy-light-border.css","ttwork_files/tippy-6.2.7/tippy.css","ttwork_files/tippy-6.2.7/tippy.umd.min 2.js","ttwork_files/tippy-6.2.7/tippy.umd.min.js","ttwork_files/webcomponents-2.0.0/webcomponents 2.js","ttwork_files/webcomponents-2.0.0/webcomponents.js","wk_1_image.png","wk_2_image.png","wk_3_image.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2419,24 +2419,140 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="d-article">
 <p>Below are my assignments for the weekly Tidy Tuesday challenge.</p>
 <h2 id="week-1-formula-1-racing">Week 1: Formula 1 Racing</h2>
-<p><img src="wk_1_image.png" width="200" /></p>
-<p>I am not a big F1 racing fan and was completely unaware of many American drivers being involved. I assumed, as there are many other nationality drivers, that it was more of a European centered sport. I chose to look at American wins over the years as I was curious to see how well American drivers have performed in a sport that I think is not super well known in America. As I suspected, I would guess it is not as well knwon possibly because of the trend seen above. With little American success (actually 0 wins since a bit before 1980), if someone wasn’t an avid fan they most likely would not know much as opposed to more American-centric sports like football.</p>
-<h2 id="week-2-billboard-top-hits">Week 2: Billboard Top Hits</h2>
-<p><img src="wk_2_image.png" width="200" /></p>
-<p>I have heard of many songs going on and off the billboard top hits list. I was curious as to how the speed to the top of the list is different for songs that only were popular for one stint compared to songs that went on and off the list many times, specifically on and off a lot of times. As you can see, songs that are big hits one time only (ie on and off the list, not on and off several times) saw a very quick and steep rise to the top of the list (denoted by a steep slope down w massive y axis scale). As the instance of the song increases, you can see less of a skew on the graph as opposed to the instance == 1 sharp right skew, denoting less of a rise beyond its initial instance. Notice the free y axis scales and how even steeper rises to the top of the list (bottom of y axis) for increased instances does not compare in any way to the massive and exponential rise to the top of the list for instance == 1. In summary, songs that are one hit wonders on the list skyrocket to the top with increased weeks on the chart resulting in higher peak position. Songs that have been on the list already tend to start a bit higher on the list in its initial peak position yet as weeks go on, the rise to the top is wayyyyyy less drastic / evident (or even existent).</p>
-<h2 id="week-3-emmy-awards">Week 3: Emmy Awards</h2>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/thebioengineer/tidytuesdayR'>tidytuesdayR</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://rvest.tidyverse.org/'>rvest</a></span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>tuesdata</span> <span class='op'>&lt;-</span> <span class='fu'>tidytuesdayR</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/tidytuesdayR/man/tt_load.html'>tt_load</a></span><span class='op'>(</span><span class='st'>'2021-09-21'</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>tuesdata1</span> <span class='op'>&lt;-</span> <span class='fu'>tidytuesdayR</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/tidytuesdayR/man/tt_load.html'>tt_load</a></span><span class='op'>(</span><span class='st'>'2021-09-07'</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>
+    Downloading file 1 of 13: `circuits.csv`
+    Downloading file 2 of 13: `constructor_results.csv`
+    Downloading file 3 of 13: `constructor_standings.csv`
+    Downloading file 4 of 13: `constructors.csv`
+    Downloading file 5 of 13: `driver_standings.csv`
+    Downloading file 6 of 13: `drivers.csv`
+    Downloading file 7 of 13: `lap_times.csv`
+    Downloading file 8 of 13: `pit_stops.csv`
+    Downloading file 9 of 13: `qualifying.csv`
+    Downloading file 10 of 13: `races.csv`
+    Downloading file 11 of 13: `results.csv`
+    Downloading file 12 of 13: `seasons.csv`
+    Downloading file 13 of 13: `status.csv`</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>results</span> <span class='op'>&lt;-</span> <span class='va'>tuesdata1</span><span class='op'>$</span><span class='va'>results</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>driver_results_df</span> <span class='op'>&lt;-</span> <span class='va'>tuesdata1</span><span class='op'>$</span><span class='va'>driver_standings</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>left_join</a></span><span class='op'>(</span><span class='va'>tuesdata1</span><span class='op'>$</span><span class='va'>races</span>, by <span class='op'>=</span> <span class='st'>"raceId"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span>driver_url <span class='op'>=</span> <span class='va'>url</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>left_join</a></span><span class='op'>(</span><span class='va'>tuesdata1</span><span class='op'>$</span><span class='va'>drivers</span>, by <span class='op'>=</span> <span class='st'>"driverId"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>driver_results_by_nationality</span> <span class='op'>&lt;-</span> <span class='va'>driver_results_df</span> <span class='op'>%&gt;%</span>
+                                    <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>nationality</span><span class='op'>)</span> 
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_Americans</span> <span class='op'>&lt;-</span> <span class='va'>driver_results_by_nationality</span> <span class='op'>%&gt;%</span>
+            <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>nationality</span> <span class='op'>==</span> <span class='st'>"American"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+            <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>year</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+            <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>total_wins <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>wins</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>Americans</span> <span class='op'>&lt;-</span> <span class='va'>df_Americans</span> <span class='op'>%&gt;%</span>
+    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>year</span>, y <span class='op'>=</span> <span class='va'>total_wins</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"blue"</span>, size <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Year"</span>, y <span class='op'>=</span> <span class='st'>"Total Wins"</span>, title <span class='op'>=</span> <span class='st'>"USA Formula 1 Race Wins Over The Years -- by Anthony Palma"</span><span class='op'>)</span> 
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>Americans</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>
+  panel.background <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_rect</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"#BFD5E3"</span>, colour <span class='op'>=</span> <span class='st'>"#6D9EC1"</span>, size <span class='op'>=</span> <span class='fl'>2</span>, linetype <span class='op'>=</span> <span class='st'>"solid"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="ttwork_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
+</div>
+<p><strong>Question: How does number of wins trend over the years for American drivers?</strong></p>
+<p>I am not a big F1 racing fan and was completely unaware of many American drivers being involved. I assumed, as there are many other nationality drivers, that it was more of a European centered sport. I chose to look at American wins over the years as I was curious to see how well American drivers have performed in a sport that I think is not super well known in America. As I suspected, I would guess it is not as well knwon possibly because of the trend seen above. With little American success (actually 0 wins since a bit before 1980), if someone wasn’t an avid fan they most likely would not know much as opposed to more American-centric sports like football.</p>
+<h2 id="week-2-billboard-top-hits">Week 2: Billboard Top Hits</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>tuesdata2</span> <span class='op'>&lt;-</span> <span class='fu'>tidytuesdayR</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/tidytuesdayR/man/tt_load.html'>tt_load</a></span><span class='op'>(</span><span class='st'>'2021-09-14'</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>
+    Downloading file 1 of 2: `billboard.csv`
+    Downloading file 2 of 2: `audio_features.csv`</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>billboard</span> <span class='op'>&lt;-</span> <span class='va'>tuesdata2</span><span class='op'>$</span><span class='va'>billboard</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>billboard_mod</span> <span class='op'>&lt;-</span> <span class='va'>billboard</span> <span class='op'>%&gt;%</span>
+                  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>week_position</span>, <span class='va'>instance</span>, <span class='va'>previous_week_position</span>, <span class='va'>peak_position</span>, <span class='va'>weeks_on_chart</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>billboard_graph</span> <span class='op'>&lt;-</span> <span class='va'>billboard_mod</span> <span class='op'>%&gt;%</span>
+    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>y <span class='op'>=</span> <span class='va'>weeks_on_chart</span>, x <span class='op'>=</span> <span class='va'>peak_position</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"#151c73"</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Weeks on the Chart"</span>, y <span class='op'>=</span> <span class='st'>"Peak Billboard Position"</span>, title <span class='op'>=</span> <span class='st'>"The Effect of Repeated Hit Songs on Speed to the Top of the Billboard List"</span>, subtitle <span class='op'>=</span> <span class='st'>"Facet Wrapped by Instance -- by Anthony Palma"</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span><span class='op'>(</span><span class='op'>~</span><span class='va'>instance</span>, scales <span class='op'>=</span> <span class='st'>"free_y"</span>, nrow <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span> 
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>billboard_graph</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>panel.background <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_rect</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"#ed8c0e"</span><span class='op'>)</span>, 
+        panel.grid.major <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>, 
+        panel.grid.minor <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>, 
+        plot.background <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_rect</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"#151c73"</span><span class='op'>)</span>, 
+        text <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"#FFFFFF"</span><span class='op'>)</span>, 
+        axis.text <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"#FFFFFF"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="ttwork_files/figure-html5/unnamed-chunk-11-1.png" width="624" /></p>
+</div>
+<p><strong>Question: How does speed to the top of the billboard list become altered by a song having been on the list before?</strong></p>
+<p>I have heard of many songs going on and off the billboard top hits list. I was curious as to how the speed to the top of the list is different for songs that only were popular for one stint compared to songs that went on and off the list many times, specifically on and off a lot of times. As you can see, songs that are big hits one time only (ie on and off the list, not on and off several times) saw a very quick and steep rise to the top of the list (denoted by a steep slope down w massive y axis scale). As the instance of the song increases, you can see less of a skew on the graph as opposed to the instance == 1 sharp right skew, denoting less of a rise beyond its initial instance. Notice the free y axis scales and how even steeper rises to the top of the list (bottom of y axis) for increased instances does not compare in any way to the massive and exponential rise to the top of the list for instance == 1. In summary, songs that are one hit wonders on the list skyrocket to the top with increased weeks on the chart resulting in higher peak position. Songs that have been on the list already tend to start a bit higher on the list in its initial peak position yet as weeks go on, the rise to the top is wayyyyyy less drastic / evident (or even existent).</p>
+<h2 id="week-3-emmy-awards">Week 3: Emmy Awards</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>tuesdata3</span> <span class='op'>&lt;-</span> <span class='fu'>tidytuesdayR</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/tidytuesdayR/man/tt_load.html'>tt_load</a></span><span class='op'>(</span><span class='st'>'2021-09-21'</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>
     Downloading file 1 of 1: `nominees.csv`</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>nominees</span> <span class='op'>&lt;-</span> <span class='va'>tuesdata</span><span class='op'>$</span><span class='va'>nominees</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>nominees</span> <span class='op'>&lt;-</span> <span class='va'>tuesdata3</span><span class='op'>$</span><span class='va'>nominees</span>
 </code></pre>
 </div>
 </div>
@@ -2444,63 +2560,43 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>nominees_new</span> <span class='op'>&lt;-</span> 
   <span class='va'>nominees</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>select</span><span class='op'>(</span><span class='op'>-</span><span class='va'>logo</span>, <span class='op'>-</span><span class='va'>page_id</span>, <span class='op'>-</span><span class='va'>page</span><span class='op'>)</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>-</span><span class='va'>logo</span>, <span class='op'>-</span><span class='va'>page_id</span>, <span class='op'>-</span><span class='va'>page</span><span class='op'>)</span>
 </code></pre>
 </div>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>nominees_new</span>
-</code></pre>
-</div>
-<pre><code># A tibble: 29,678 × 7
-   category    production   type   title  distributor producer    year
-   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;      &lt;dbl&gt;
- 1 Outstandin… &lt;NA&gt;         Nomin… black… ABC         ABC         2021
- 2 Outstandin… &lt;NA&gt;         Nomin… Bridg… Netflix     A Netflix…  2021
- 3 Outstandin… &lt;NA&gt;         Nomin… Famil… FOX         20th Tele…  2021
- 4 Outstandin… &lt;NA&gt;         Nomin… Archer FX Networks FX Produc…  2021
- 5 Outstandin… Elisabeth W… Nomin… The H… Hulu        Hulu, MGM…  2021
- 6 Outstandin… Martha Spar… Nomin… The H… Hulu        Hulu, MGM…  2021
- 7 Outstandin… Larry Spitt… Nomin… The H… Hulu        Hulu, MGM…  2021
- 8 Outstandin… Rob Hepburn… Nomin… The H… Hulu        Hulu, MGM…  2021
- 9 Outstandin… Lester Cohe… Nomin… The U… HBO         HBO in as…  2021
-10 Outstandin… Doug Huszti… Nomin… The U… HBO         HBO in as…  2021
-# … with 29,668 more rows</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>nominees_netflix</span> <span class='op'>&lt;-</span> <span class='va'>nominees_new</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>distributor</span> <span class='op'>==</span> <span class='st'>"Netflix"</span><span class='op'>)</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>distributor</span> <span class='op'>==</span> <span class='st'>"Netflix"</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>Netflix_graph</span> <span class='op'>&lt;-</span> <span class='va'>nominees_netflix</span> <span class='op'>%&gt;%</span>
-    <span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>year</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-    <span class='fu'>geom_histogram</span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"count"</span>, fill <span class='op'>=</span> <span class='st'>"#Aa1d1d"</span><span class='op'>)</span> <span class='op'>+</span>
-    <span class='fu'>facet_wrap</span><span class='op'>(</span><span class='op'>~</span><span class='va'>type</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>labs</span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Count"</span>, y <span class='op'>=</span> <span class='st'>"Year"</span>, title <span class='op'>=</span> <span class='st'>"Netflix's Emmy Award Nominations Compared with Wins Over the Years"</span>, subtitle <span class='op'>=</span> <span class='st'>"by Anthony Palma"</span><span class='op'>)</span> 
+    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>year</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_histogram.html'>geom_histogram</a></span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"count"</span>, fill <span class='op'>=</span> <span class='st'>"#Aa1d1d"</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span><span class='op'>(</span><span class='op'>~</span><span class='va'>type</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Count"</span>, y <span class='op'>=</span> <span class='st'>"Year"</span>, title <span class='op'>=</span> <span class='st'>"Netflix's Emmy Award Nominations Compared with Wins Over the Years"</span>, subtitle <span class='op'>=</span> <span class='st'>"by Anthony Palma"</span><span class='op'>)</span> 
 </code></pre>
 </div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>Netflix_graph</span> <span class='op'>+</span>
-   <span class='fu'>theme</span><span class='op'>(</span>panel.background <span class='op'>=</span> <span class='fu'>element_rect</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"#000000"</span><span class='op'>)</span>, 
-        panel.grid.major <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>, 
-        panel.grid.minor <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>, 
-        plot.background <span class='op'>=</span> <span class='fu'>element_rect</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"#Aa1d1d"</span><span class='op'>)</span>, 
-        text <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"#FFFFFF"</span><span class='op'>)</span>, 
-        axis.text <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"#FFFFFF"</span><span class='op'>)</span><span class='op'>)</span>
+   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>panel.background <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_rect</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"#000000"</span><span class='op'>)</span>, 
+        panel.grid.major <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>, 
+        panel.grid.minor <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>, 
+        plot.background <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_rect</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"#Aa1d1d"</span><span class='op'>)</span>, 
+        text <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"#FFFFFF"</span><span class='op'>)</span>, 
+        axis.text <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"#FFFFFF"</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="ttwork_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
+<p><img src="ttwork_files/figure-html5/unnamed-chunk-16-1.png" width="624" /></p>
 </div>
 <p><strong>Question: What does Netflix’s Emmy Award performance look like over the years?</strong></p>
-<p>Netflix is my favorite streaming platform which has had dozens of major hits over the last couple years. I was curious as to how their rise in binge-worthy shows over the pandemic would be reflected in a faceted graph looking at nomination and winner of category counts for their shows. To no surprise, their content quality increased as I perceived, which can be seen with the rapid rise in emmy nominated shows, peaking during the 2020 pandemic year (Note: 2021 was still very strong though). Surprisingly, their winner of category graph doesn’t actually peak where their nominations graph does….the winner graph peaks just a bit after in 2021. This could be because some of the backend quality 2020 films/shows were after the 2020 awards or it also could be because Netflix limited production to just their top hits in 2021 maximizing performance of shows and minimzing loss in a tough economic situation…</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Netflix is my favorite streaming platform which has had dozens of major hits over the last couple years. I was curious as to how their rise in binge-worthy shows over the pandemic would be reflected in a faceted graph looking at nomination and winner of category counts for their shows. To no surprise, their content quality increased as I perceived, which can be seen with the rapid rise in Emmy nominated shows, peaking during the 2020 pandemic year (Note: 2021 was still very strong though). Surprisingly, their winner of category graph doesn’t actually peak where their nominations graph does….the winner graph peaks just a bit after in 2021. This could be because some of the back end quality 2020 films/shows were after the 2020 awards or it also could be because Netflix limited production to just their top hits in 2021 maximizing performance of shows and minimizing loss in a tough economic situation…</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

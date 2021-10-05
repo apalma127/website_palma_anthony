@@ -19,14 +19,16 @@ Below are my assignments for the weekly Tidy Tuesday challenge.
 library(ggplot2)
 library(dplyr)
 library(tidyverse)
+library(tidytuesdayR)
+library(rvest)
 ```
 
-```{r}
+```{r, cache=TRUE}
 tuesdata1 <- tidytuesdayR::tt_load('2021-09-07')
 results <- tuesdata1$results
 ```
 
-```{r}
+```{r, cache=TRUE}
 driver_results_df <- tuesdata1$driver_standings %>% 
   left_join(tuesdata1$races, by = "raceId") %>% 
   rename(driver_url = url) %>% 
@@ -34,12 +36,12 @@ driver_results_df <- tuesdata1$driver_standings %>%
 ```
 
 
-```{r}
+```{r, cache=TRUE}
 driver_results_by_nationality <- driver_results_df %>%
                                     group_by(nationality) 
 ```
 
-```{r}
+```{r, cache=TRUE}
 df_Americans <- driver_results_by_nationality %>%
             filter(nationality == "American") %>%
             group_by(year) %>%
@@ -47,7 +49,7 @@ df_Americans <- driver_results_by_nationality %>%
 
 ```
 
-```{r}
+```{r, cache=TRUE}
 Americans <- df_Americans %>%
     ggplot(aes(x = year, y = total_wins)) +
     geom_line(color = "blue", size = 1) +
@@ -55,7 +57,7 @@ Americans <- df_Americans %>%
 
 ```
 
-```{r}
+```{r, cache=TRUE}
 Americans + theme(
   panel.background = element_rect(fill = "#BFD5E3", colour = "#6D9EC1", size = 2, linetype = "solid"))
 
@@ -67,27 +69,20 @@ I am not a big F1 racing fan and was completely unaware of many American drivers
 
 ## Week 2: Billboard Top Hits
 
-```{r}
-library(ggplot2)
-library(dplyr)
-library(tidyverse)
-library(tidytuesdayR)
-```
 
-
-```{r}
+```{r, cache=TRUE}
 tuesdata2 <- tidytuesdayR::tt_load('2021-09-14')
 billboard <- tuesdata2$billboard
 
 ```
 
-```{r}
+```{r, cache=TRUE}
 billboard_mod <- billboard %>%
                   select(week_position, instance, previous_week_position, peak_position, weeks_on_chart)
 ```
 
 
-```{r}
+```{r, cache=TRUE}
 billboard_graph <- billboard_mod %>%
     ggplot(aes(y = weeks_on_chart, x = peak_position)) +
     geom_col(color = "#151c73") +
@@ -95,7 +90,7 @@ billboard_graph <- billboard_mod %>%
     facet_wrap(~instance, scales = "free_y", nrow = 2) 
 ```
 
-```{r}
+```{r, cache=TRUE}
 billboard_graph +
   theme(panel.background = element_rect(fill = "#ed8c0e"), 
         panel.grid.major = element_blank(), 
@@ -113,35 +108,23 @@ I have heard of many songs going on and off the billboard top hits list.  I was 
 
 ## Week 3: Emmy Awards
 
-```{r, echo= FALSE}
-library(ggplot2)
-library(dplyr)
-library(tidyverse)
-library(tidytuesdayR)
-library(rvest)
-```
-
-```{r}
+```{r, cache=TRUE}
 tuesdata3 <- tidytuesdayR::tt_load('2021-09-21')
-
 nominees <- tuesdata3$nominees
 ```
 
-```{r}
+```{r, cache=TRUE}
 nominees_new <- 
   nominees %>%
   select(-logo, -page_id, -page)
 ```
 
-```{r}
-nominees_new
-```
-```{r}
+```{r, cache=TRUE}
 nominees_netflix <- nominees_new %>%
   filter(distributor == "Netflix")
 ```
 
-```{r}
+```{r, cache=TRUE}
 Netflix_graph <- nominees_netflix %>%
     ggplot(aes(x = year)) +
     geom_histogram(stat = "count", fill = "#Aa1d1d") +
@@ -149,7 +132,7 @@ Netflix_graph <- nominees_netflix %>%
   labs(x = "Count", y = "Year", title = "Netflix's Emmy Award Nominations Compared with Wins Over the Years", subtitle = "by Anthony Palma") 
 ```
 
-```{r}
+```{r, cache=TRUE}
 Netflix_graph +
    theme(panel.background = element_rect(fill = "#000000"), 
         panel.grid.major = element_blank(), 
@@ -161,8 +144,5 @@ Netflix_graph +
 
 **Question:  What does Netflix's Emmy Award performance look like over the years?**
 
-Netflix is my favorite streaming platform which has had dozens of major hits over the last couple years.  I was curious as to how their rise in binge-worthy shows over the pandemic would be reflected in a faceted graph looking at nomination and winner of category counts for their shows. To no surprise, their content quality increased as I perceived, which can be seen with the rapid rise in emmy nominated shows, peaking during the 2020 pandemic year (Note: 2021 was still very strong though). Surprisingly, their winner of category graph doesn't actually peak where their nominations graph does....the winner graph peaks just a bit after in 2021.  This could be because some of the backend quality 2020 films/shows were after the 2020 awards or it also could be because Netflix limited production to just their top hits in 2021 maximizing performance of shows and minimzing loss in a tough economic situation...
-
-
-
+Netflix is my favorite streaming platform which has had dozens of major hits over the last couple years.  I was curious as to how their rise in binge-worthy shows over the pandemic would be reflected in a faceted graph looking at nomination and winner of category counts for their shows. To no surprise, their content quality increased as I perceived, which can be seen with the rapid rise in Emmy nominated shows, peaking during the 2020 pandemic year (Note: 2021 was still very strong though). Surprisingly, their winner of category graph doesn't actually peak where their nominations graph does....the winner graph peaks just a bit after in 2021.  This could be because some of the back end quality 2020 films/shows were after the 2020 awards or it also could be because Netflix limited production to just their top hits in 2021 maximizing performance of shows and minimizing loss in a tough economic situation...
 
