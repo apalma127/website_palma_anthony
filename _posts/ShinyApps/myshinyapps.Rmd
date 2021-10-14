@@ -1,0 +1,21 @@
+---
+title: "My Shiny Apps"
+description: |
+  Shiny Apps
+author:
+  - name: Anthony Palma
+date: 10-14-2021
+preview: shiny.png
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+Below are links to my shiny apps created in Stat 456...
+
+KC House Data App:  https://ajp28117.shinyapps.io/KC-House-Price-Variable-Analysis/
+Github Repo for App:  https://github.com/apalma127/shiny-app-stat456/blob/main/app.R
+
+**My shiny app uses the KC house data and looks at a select group of quantitative variables and their distributions.  Interesting trends can be seen in these graphs, including showing some very skewed distributions for important variables like price and most square foot variables**
+
+

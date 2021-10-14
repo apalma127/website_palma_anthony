@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/ShinyApps/",
+    "title": "My Shiny Apps",
+    "description": "Shiny Apps",
+    "author": [
+      {
+        "name": "Anthony Palma",
+        "url": {}
+      }
+    ],
+    "date": "2021-10-14",
+    "categories": [],
+    "contents": "\nBelow are links to my shiny apps created in Stat 456…\nKC House Data App: https://ajp28117.shinyapps.io/KC-House-Price-Variable-Analysis/ Github Repo for App: https://github.com/apalma127/shiny-app-stat456/blob/main/app.R\nMy shiny app uses the KC house data and looks at a select group of quantitative variables and their distributions. Interesting trends can be seen in these graphs, including showing some very skewed distributions for important variables like price and most square foot variables\n\n\n\n",
+    "preview": "posts/ShinyApps/shiny.png",
+    "last_modified": "2021-10-14T10:11:14-05:00",
+    "input_file": "myshinyapps.knit.md"
+  },
+  {
     "path": "posts/2021-09-07-ttwork/",
     "title": "Tidy Tuesday Work",
     "description": "All of my graphs from weekly Tidy Tuesday work",
