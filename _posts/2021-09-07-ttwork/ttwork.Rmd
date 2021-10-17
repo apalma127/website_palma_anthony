@@ -146,3 +146,56 @@ Netflix_graph +
 
 Netflix is my favorite streaming platform which has had dozens of major hits over the last couple years.  I was curious as to how their rise in binge-worthy shows over the pandemic would be reflected in a faceted graph looking at nomination and winner of category counts for their shows. To no surprise, their content quality increased as I perceived, which can be seen with the rapid rise in Emmy nominated shows, peaking during the 2020 pandemic year (Note: 2021 was still very strong though). Surprisingly, their winner of category graph doesn't actually peak where their nominations graph does....the winner graph peaks just a bit after in 2021.  This could be because some of the back end quality 2020 films/shows were after the 2020 awards or it also could be because Netflix limited production to just their top hits in 2021 maximizing performance of shows and minimizing loss in a tough economic situation...
 
+
+## Week 4: Nurse Salaries
+
+```{r, cache=TRUE}
+tuesdata <- tidytuesdayR::tt_load('2021-10-05')
+
+```
+
+```{r, cache=TRUE}
+nurses <- tuesdata$nurses
+
+```
+
+
+
+```{r, cache=TRUE}
+nurses_new <- nurses %>%
+            filter(Year == "2020", 
+                   State != "Virgin Islands") %>%
+            select(State, Year, `Annual Salary Avg`, `Annual Salary Median`, `Total Employed RN`) %>%
+            group_by(State) %>%
+            mutate(inc_ineq_percent = (`Annual Salary Avg` - `Annual Salary Median`)/(`Annual Salary Median`)*100) %>%
+            ungroup() 
+
+```
+
+
+
+```{r, cache=TRUE, out.width="300%"}
+nurses_new %>%
+    ggplot(aes(x = `Total Employed RN`, y = inc_ineq_percent)) +
+    geom_point(size = 0.6, color = "red") +
+    geom_text(aes(label= State), color = "navy", hjust=0, vjust=0, size=2, check_overlap = TRUE) +
+    labs(x = "Total Number of RN", 
+         y = "Income Inequality Percent", 
+        title = "Which State's Have a Greter Discrepancy In Pay for RN's?") +
+    theme_classic() +
+    theme(
+    panel.background = element_rect(fill = "#CBC3E3"))
+```
+
+
+**For a Pandemic Year, 2020, how does the proportion of income inequality, comparing average salary to median salary, compare across the country?** 
+
+Income Inequality Calculation, represented as a % --> Inc Ineq = (Ann Salary Avg - Ann Salary Median) / Ann Salary median
+
+NOTE: Higher Inc Ineq percent reveals a state with a significantly higher average salary than median salary, showing a higher discrepancy in pay with more nurses paid significantly more than the bulk.  A negative percent reveals a discrepancy where more nurses are significantly underpaid relative to the median salary than overpaid.  
+
+
+**I wanted to look at how different states pay to nurses compares to their median pay.  As you can see, most have + income inequality variables meaning they have higher avg annual salaries than median annual salaries by a certain percent.  Because of the nature of how average is calculated compared to median, having a higher avg salary is a result of having much higher top salaries.  For the few with negative scores like Hawaii, this reflects a pool of nurses that have more signifcantly underpaid relative to the median than signifcantly overpaid.  While it may be a bit difficult to understand at first glance, having your avergae annual salary up to 5% higher than your average median salary is very interesting to see....One point to not is that as the number of nurses increase, the perceived income inequality goes down closer to 0.**
+
+
+
