@@ -88,7 +88,7 @@ billboard_mod <- billboard %>%
 
 
 ```{r, cache=TRUE}
-billboard_graph <- billboard_mod %>%
+billboard_graph_new <- billboard_mod %>%
     ggplot(aes(y = weeks_on_chart, x = peak_position)) +
     geom_line(color = "#151c73") +
     labs(x = "Weeks on the Chart", y = "Peak Billboard Position", title = "The Effect of Repeated Hit Songs on Speed to the Top of the Billboard List", subtitle = "Facet Wrapped by Instance -- by Anthony Palma") +
@@ -96,7 +96,7 @@ billboard_graph <- billboard_mod %>%
 ```
 
 ```{r, cache=TRUE}
-billboard_graph +
+billboard_graph_new +
   theme(panel.background = element_rect(fill = "#ed8c0e"), 
         panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank(), 
