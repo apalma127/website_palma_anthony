@@ -59,7 +59,12 @@ Americans <- df_Americans %>%
 
 ```{r, cache=TRUE}
 Americans + theme(
-  panel.background = element_rect(fill = "#BFD5E3", colour = "#6D9EC1", size = 2, linetype = "solid"))
+  panel.background = element_rect(fill = "orange", color = "#6D9EC1", size = 2, linetype = "solid"), 
+  panel.grid.minor =  element_blank(), 
+  panel.grid.major =  element_blank())
+
+
+
 
 ```
 
@@ -85,7 +90,7 @@ billboard_mod <- billboard %>%
 ```{r, cache=TRUE}
 billboard_graph <- billboard_mod %>%
     ggplot(aes(y = weeks_on_chart, x = peak_position)) +
-    geom_col(color = "#151c73") +
+    geom_line(color = "#151c73") +
     labs(x = "Weeks on the Chart", y = "Peak Billboard Position", title = "The Effect of Repeated Hit Songs on Speed to the Top of the Billboard List", subtitle = "Facet Wrapped by Instance -- by Anthony Palma") +
     facet_wrap(~instance, scales = "free_y", nrow = 2) 
 ```
@@ -127,9 +132,9 @@ nominees_netflix <- nominees_new %>%
 ```{r, cache=TRUE}
 Netflix_graph <- nominees_netflix %>%
     ggplot(aes(x = year)) +
-    geom_histogram(stat = "count", fill = "#Aa1d1d") +
+    geom_bar(stat = "count", fill = "#Aa1d1d") +
     facet_wrap(~type) +
-  labs(x = "Count", y = "Year", title = "Netflix's Emmy Award Nominations Compared with Wins Over the Years", subtitle = "by Anthony Palma") 
+  labs(y = "Count", x = "Year", title = "Netflix's Emmy Award Nominations Compared with Wins Over the Years", subtitle = "by Anthony Palma") 
 ```
 
 ```{r, cache=TRUE}
@@ -174,28 +179,30 @@ nurses_new <- nurses %>%
 
 
 
-```{r, cache=TRUE, out.width="300%"}
+```{r, cache=TRUE, out.width="600%"}
 nurses_new %>%
     ggplot(aes(x = `Total Employed RN`, y = inc_ineq_percent)) +
     geom_point(size = 0.6, color = "red") +
     geom_text(aes(label= State), color = "navy", hjust=0, vjust=0, size=2, check_overlap = TRUE) +
-    labs(x = "Total Number of RN", 
+    labs(x = "Total Number of RNs", 
          y = "Income Inequality Percent", 
-        title = "Which State's Have a Greter Discrepancy In Pay for RN's?") +
+        title = "Which States' Have a Greater Discrepancy In Pay for RN's?") +
     theme_classic() +
     theme(
-    panel.background = element_rect(fill = "#CBC3E3"))
+    panel.background = element_rect(fill = "#CBC3E3"), 
+    plot.background = element_rect(fill = "#CBC3E3"), 
+    text = element_text(color = "navy")) 
+
+
+    
 ```
 
 
 **For a Pandemic Year, 2020, how does the proportion of income inequality, comparing average salary to median salary, compare across the country?** 
 
-Income Inequality Calculation, represented as a % --> Inc Ineq = (Ann Salary Avg - Ann Salary Median) / Ann Salary median
+Income Inequality Calculation, represented as a % --> Inc Ineq = (Ann Salary Avg - Ann Salary Median) / Ann Salary Median
 
-NOTE: Higher Inc Ineq percent reveals a state with a significantly higher average salary than median salary, showing a higher discrepancy in pay with more nurses paid significantly more than the bulk.  A negative percent reveals a discrepancy where more nurses are significantly underpaid relative to the median salary than overpaid.  
-
-
-I wanted to look at how different states pay to nurses compares to their median pay.  As you can see, most have + income inequality variables meaning they have higher avg annual salaries than median annual salaries by a certain percent.  Because of the nature of how average is calculated compared to median, having a higher avg salary is a result of having much higher top salaries.  For the few with negative scores like Hawaii, this reflects a pool of nurses that have more signifcantly underpaid relative to the median than signifcantly overpaid.  While it may be a bit difficult to understand at first glance, having your avergae annual salary up to 5% higher than your average median salary is very interesting to see....One point to not is that as the number of nurses increase, the perceived income inequality goes down closer to 0.
+NOTE: Higher and positive Inc Ineq percent reveals a state with a significantly higher average salary than median salary, showing a higher discrepancy in pay with more nurses paid significantly more than the bulk.  A negative percent reveals a discrepancy where more nurses are significantly underpaid relative to the median salary than overpaid.  
 
 
-
+I wanted to look at how different states pay to nurses compares to their median pay.  As you can see, most have "+" income inequality values meaning they have higher avg annual salaries than median annual salaries by a certain percent.  Because of the nature of how average is calculated compared to median, having a higher avg salary is a result of having much higher top salaries.  For the few with negative scores like Hawaii, this reflects a pool of nurses that are more significantly underpaid relative to the median than significantly overpaid like the bulk of the states.  While it may be a bit difficult to understand at first glance (of this calculation for a proxy of income inequality), having your average annual salary up to 5% higher than your average median salary is very interesting to see as it shows a big discrepancy in pay comparing the middle points with the outliers....One point to note is that as the number of nurses increase, the perceived income inequality goes down closer to 0...
