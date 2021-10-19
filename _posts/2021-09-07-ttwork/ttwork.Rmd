@@ -130,7 +130,7 @@ nominees_netflix <- nominees_new %>%
 ```
 
 ```{r, cache=TRUE}
-Netflix_graph <- nominees_netflix %>%
+Netflix_graph_new <- nominees_netflix %>%
     ggplot(aes(x = year)) +
     geom_bar(stat = "count", fill = "#Aa1d1d") +
     facet_wrap(~type) +
@@ -138,7 +138,7 @@ Netflix_graph <- nominees_netflix %>%
 ```
 
 ```{r, cache=TRUE}
-Netflix_graph +
+Netflix_graph_new +
    theme(panel.background = element_rect(fill = "#000000"), 
         panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank(), 
