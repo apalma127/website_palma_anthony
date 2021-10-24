@@ -206,3 +206,44 @@ NOTE: Higher and positive Inc Ineq percent reveals a state with a significantly 
 
 
 I wanted to look at how different states pay to nurses compares to their median pay.  As you can see, most have "+" income inequality values meaning they have higher avg annual salaries than median annual salaries by a certain percent.  Because of the nature of how average is calculated compared to median, having a higher avg salary is a result of having much higher top salaries.  For the few with negative scores like Hawaii, this reflects a pool of nurses that are more significantly underpaid relative to the median than significantly overpaid like the bulk of the states.  While it may be a bit difficult to understand at first glance (of this calculation for a proxy of income inequality), having your average annual salary up to 5% higher than your average median salary is very interesting to see as it shows a big discrepancy in pay comparing the middle points with the outliers....One point to note is that as the number of nurses increase, the perceived income inequality goes down closer to 0...
+
+
+## Week 5: CBS Survivor
+
+```{r, cache=TRUE}
+tuesdata <- tidytuesdayR::tt_load(2021, week = 23)
+
+summary <- tuesdata$summary
+```
+
+```{r, cache=TRUE}
+survivor <- 
+  summary %>%
+  select(season_name, season, country, viewers_premier) %>%
+  mutate(premier_avg = mean(viewers_premier),
+        premier_viewers_diff = viewers_premier - premier_avg)
+  
+```
+
+
+```{r, cache=TRUE}
+    ggplot(survivor, aes(x = season, y = viewers_premier)) +
+    geom_line(size = 2, color = "#17c6e0") +
+    geom_hline(yintercept = mean(survivor$viewers_premier), color = "red") +
+    geom_hline(yintercept = median(survivor$viewers_premier), color = "blue") +
+    labs(x = "Season Number", 
+         y = "Premier Episode Viewership (millions)", 
+        title = "Survivior Premier Viewership, with Reference to Average and Median Premier") +
+    theme_classic() +
+    theme(
+    panel.background = element_rect(fill = "#Dae017"), 
+    plot.background = element_rect(fill = "#17c6e0"), 
+    text = element_text(color = "navy")) 
+```
+
+**How has Survivor enthusiasm changed over the seasons, as it relates to season premier viewership?** 
+
+
+I am a Survivor Super Fan and have been watching with my family every season since I can remember.  I wanted to see how the enthusiasm for the show, as expressed in millions of viewers from the premier, has changed over time (with seasons =reflecting change over time).  To my surprise, the earlier seasons in which the game was much more simple saw a much higher level of enthusiasm compared with the newer more modern and advanced seasons.  Seeing a steady decline in premier viewership is incredibly surprising as I have found the more strategic and modern more recent seasons have been of more interest to me than the older more basic seasons....maybe it is a generational gap difference that can be seen in the changing viewership.  It is quite clear overall though that the mean premier viewership around 17-18 million is carried heavily by the large spikes around season 2 and 8 which explains the massive 4 million viewer discrepancy between average premier viewership and median premier viewership.   
+
+

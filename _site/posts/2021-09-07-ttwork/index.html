@@ -117,7 +117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["tt_image.jpeg","ttwork_files/anchor-4.2.2/anchor.min.js","ttwork_files/bowser-1.9.3/bowser.min.js","ttwork_files/distill-2.2.21/template.v2.js","ttwork_files/figure-html5/unnamed-chunk-11-1.png","ttwork_files/figure-html5/unnamed-chunk-12-1.png","ttwork_files/figure-html5/unnamed-chunk-16-1.png","ttwork_files/figure-html5/unnamed-chunk-20-1.png","ttwork_files/figure-html5/unnamed-chunk-7-1.png","ttwork_files/header-attrs-2.10/header-attrs.js","ttwork_files/header-attrs-2.11/header-attrs.js","ttwork_files/jquery-1.11.3/jquery.min.js","ttwork_files/jquery-3.6.0/jquery-3.6.0.js","ttwork_files/jquery-3.6.0/jquery-3.6.0.min.js","ttwork_files/jquery-3.6.0/jquery-3.6.0.min.map","ttwork_files/popper-2.6.0/popper.min.js","ttwork_files/tippy-6.2.7/tippy-bundle.umd.min.js","ttwork_files/tippy-6.2.7/tippy-light-border.css","ttwork_files/tippy-6.2.7/tippy.css","ttwork_files/tippy-6.2.7/tippy.umd.min.js","ttwork_files/webcomponents-2.0.0/webcomponents.js","wk_1_image.png","wk_2_image.png","wk_3_image.png"]}
+  {"type":"character","attributes":{},"value":["tt_image.jpeg","ttwork_files/anchor-4.2.2/anchor.min.js","ttwork_files/bowser-1.9.3/bowser.min.js","ttwork_files/distill-2.2.21/template.v2.js","ttwork_files/figure-html5/unnamed-chunk-11-1.png","ttwork_files/figure-html5/unnamed-chunk-12-1.png","ttwork_files/figure-html5/unnamed-chunk-16-1.png","ttwork_files/figure-html5/unnamed-chunk-20-1.png","ttwork_files/figure-html5/unnamed-chunk-23-1.png","ttwork_files/figure-html5/unnamed-chunk-7-1.png","ttwork_files/header-attrs-2.10/header-attrs.js","ttwork_files/header-attrs-2.11/header-attrs.js","ttwork_files/jquery-1.11.3/jquery.min.js","ttwork_files/jquery-3.6.0/jquery-3.6.0.js","ttwork_files/jquery-3.6.0/jquery-3.6.0.min.js","ttwork_files/jquery-3.6.0/jquery-3.6.0.min.map","ttwork_files/popper-2.6.0/popper.min.js","ttwork_files/tippy-6.2.7/tippy-bundle.umd.min.js","ttwork_files/tippy-6.2.7/tippy-light-border.css","ttwork_files/tippy-6.2.7/tippy.css","ttwork_files/tippy-6.2.7/tippy.umd.min.js","ttwork_files/webcomponents-2.0.0/webcomponents.js","wk_1_image.png","wk_2_image.png","wk_3_image.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2647,7 +2647,54 @@ d-appendix d-footnote-list a.footnote-backlink {
 <p>Income Inequality Calculation, represented as a % –&gt; Inc Ineq = (Ann Salary Avg - Ann Salary Median) / Ann Salary Median</p>
 <p>NOTE: Higher and positive Inc Ineq percent reveals a state with a significantly higher average salary than median salary, showing a higher discrepancy in pay with more nurses paid significantly more than the bulk. A negative percent reveals a discrepancy where more nurses are significantly underpaid relative to the median salary than overpaid.</p>
 <p>I wanted to look at how different states pay to nurses compares to their median pay. As you can see, most have “+” income inequality values meaning they have higher avg annual salaries than median annual salaries by a certain percent. Because of the nature of how average is calculated compared to median, having a higher avg salary is a result of having much higher top salaries. For the few with negative scores like Hawaii, this reflects a pool of nurses that are more significantly underpaid relative to the median than significantly overpaid like the bulk of the states. While it may be a bit difficult to understand at first glance (of this calculation for a proxy of income inequality), having your average annual salary up to 5% higher than your average median salary is very interesting to see as it shows a big discrepancy in pay comparing the middle points with the outliers….One point to note is that as the number of nurses increase, the perceived income inequality goes down closer to 0…</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h2 id="week-5-cbs-survivor">Week 5: CBS Survivor</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>tuesdata</span> <span class='op'>&lt;-</span> <span class='fu'>tidytuesdayR</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/tidytuesdayR/man/tt_load.html'>tt_load</a></span><span class='op'>(</span><span class='fl'>2021</span>, week <span class='op'>=</span> <span class='fl'>23</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>
+    Downloading file 1 of 5: `challenges.csv`
+    Downloading file 2 of 5: `viewers.csv`
+    Downloading file 3 of 5: `jury_votes.csv`
+    Downloading file 4 of 5: `castaways.csv`
+    Downloading file 5 of 5: `summary.csv`</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>summary</span> <span class='op'>&lt;-</span> <span class='va'>tuesdata</span><span class='op'>$</span><span class='va'>summary</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>survivor</span> <span class='op'>&lt;-</span> 
+  <span class='va'>summary</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>season_name</span>, <span class='va'>season</span>, <span class='va'>country</span>, <span class='va'>viewers_premier</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>premier_avg <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>viewers_premier</span><span class='op'>)</span>,
+        premier_viewers_diff <span class='op'>=</span> <span class='va'>viewers_premier</span> <span class='op'>-</span> <span class='va'>premier_avg</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>survivor</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>season</span>, y <span class='op'>=</span> <span class='va'>viewers_premier</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>2</span>, color <span class='op'>=</span> <span class='st'>"#17c6e0"</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_abline.html'>geom_hline</a></span><span class='op'>(</span>yintercept <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>survivor</span><span class='op'>$</span><span class='va'>viewers_premier</span><span class='op'>)</span>, color <span class='op'>=</span> <span class='st'>"red"</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_abline.html'>geom_hline</a></span><span class='op'>(</span>yintercept <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/median.html'>median</a></span><span class='op'>(</span><span class='va'>survivor</span><span class='op'>$</span><span class='va'>viewers_premier</span><span class='op'>)</span>, color <span class='op'>=</span> <span class='st'>"blue"</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Season Number"</span>, 
+         y <span class='op'>=</span> <span class='st'>"Premier Episode Viewership (millions)"</span>, 
+        title <span class='op'>=</span> <span class='st'>"Survivior Premier Viewership, with Reference to Average and Median Premier"</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_classic</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>
+    panel.background <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_rect</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"#Dae017"</span><span class='op'>)</span>, 
+    plot.background <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_rect</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"#17c6e0"</span><span class='op'>)</span>, 
+    text <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"navy"</span><span class='op'>)</span><span class='op'>)</span> 
+</code></pre>
+</div>
+<p><img src="ttwork_files/figure-html5/unnamed-chunk-23-1.png" width="624" /></p>
+</div>
+<p><strong>How has Survivor enthusiasm changed over the seasons, as it relates to season premier viewership?</strong></p>
+<p>I am a Survivor Super Fan and have been watching with my family every season since I can remember. I wanted to see how the enthusiasm for the show, as expressed in millions of viewers from the premier, has changed over time (with seasons =reflecting change over time). To my surprise, the earlier seasons in which the game was much more simple saw a much higher level of enthusiasm compared with the newer more modern and advanced seasons. Seeing a steady decline in premier viewership is incredibly surprising as I have found the more strategic and modern more recent seasons have been of more interest to me than the older more basic seasons….maybe it is a generational gap difference that can be seen in the changing viewership. It is quite clear overall though that the mean premier viewership around 17-18 million is carried heavily by the large spikes around season 2 and 8 which explains the massive 4 million viewer discrepancy between average premier viewership and median premier viewership.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
