@@ -229,21 +229,22 @@ survivor <-
 ```{r, cache=TRUE}
     ggplot(survivor, aes(x = season, y = viewers_premier)) +
     geom_line(size = 2, color = "#17c6e0") +
+    geom_text(aes(label= season), color = "navy", hjust=0, vjust=0, size=4, check_overlap = TRUE) +
     geom_hline(yintercept = mean(survivor$viewers_premier), color = "red") +
     geom_hline(yintercept = median(survivor$viewers_premier), color = "blue") +
     labs(x = "Season Number", 
          y = "Premier Episode Viewership (millions)", 
-        title = "Survivior Premier Viewership, with Reference to Average and Median Premier") +
+        title = "Survivor Premier Viewership, with Reference to Average and Median Premier") +
     theme_classic() +
     theme(
     panel.background = element_rect(fill = "#Dae017"), 
     plot.background = element_rect(fill = "#17c6e0"), 
-    text = element_text(color = "navy")) 
+    text = element_text(color = "navy", size = 11)) 
 ```
 
 **How has Survivor enthusiasm changed over the seasons, as it relates to season premier viewership?** 
 
 
-I am a Survivor Super Fan and have been watching with my family every season since I can remember.  I wanted to see how the enthusiasm for the show, as expressed in millions of viewers from the premier, has changed over time (with seasons =reflecting change over time).  To my surprise, the earlier seasons in which the game was much more simple saw a much higher level of enthusiasm compared with the newer more modern and advanced seasons.  Seeing a steady decline in premier viewership is incredibly surprising as I have found the more strategic and modern more recent seasons have been of more interest to me than the older more basic seasons....maybe it is a generational gap difference that can be seen in the changing viewership.  It is quite clear overall though that the mean premier viewership around 17-18 million is carried heavily by the large spikes around season 2 and 8 which explains the massive 4 million viewer discrepancy between average premier viewership and median premier viewership.   
+I am a Survivor Super Fan and have been watching with my family every season since I can remember.  I wanted to see how the enthusiasm for the show, as expressed in millions of viewers from the premier, has changed over time (with seasons reflecting change over time).  To my surprise, the earlier seasons in which the game was much more simple saw a much higher level of enthusiasm compared with the newer more modern and advanced seasons.  Seeing a steady decline in premier viewership is incredibly surprising as I have found the more strategic and modern recent seasons have been of more interest to me than the older more basic seasons....maybe it is a generational gap difference that can be seen in the changing viewership.  It is quite clear overall though that the mean premier viewership (RED LINE) around 17-18 million is carried heavily by the large spikes at season 2 and 8 which explains the massive 4 million-ish viewer discrepancy between average premier viewership and median premier viewership (BLUE LINE).   
 
 
