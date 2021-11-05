@@ -13,9 +13,23 @@ output:
 
 Below are links to my shiny apps created in Stat 456...
 
+
+## KC House Data 
+
 KC House Data App:  https://ajp28117.shinyapps.io/KC-House-Price-Variable-Analysis/
+
 Github Repo for App:  https://github.com/apalma127/shiny-app-stat456/blob/main/app.R
 
 **My shiny app uses the KC house data and looks at a select group of quantitative variables and their distributions.  Interesting trends can be seen in these graphs, including showing some very skewed distributions for important variables like price and most square foot variables**
+
+
+## Lending Club Data 
+
+Lending Club Data App: https://ajp28117.shinyapps.io/Lending_Club/
+
+Github Repo for App:  https://github.com/apalma127/lending_small
+
+**My shiny app uses the Lending Club data with the code and the composition / detail from Professor Lisa Lendway.  If I had more time to comb through the code, I would clean up some of the CP plot code using the new DALEX tools paired with creating my own cp_plot function.  This would be less code and would be way less work for the creator.  Our outputted CP plot shows us how changing our inputted variable effects the predicted class of the loan being paid back (1 = good / on time, 2 = bad / late / delayed), while holding all other variables constant at user inputted levels.  This is a very powerful application as you can see change over time very easily while also being able to evaluate the effect of changing constant variables and changing variables.  This type of application would be effective in using with any data set no matter the field as it is always important to be able to visualize and simply identify trends over time.**
+
 
 
