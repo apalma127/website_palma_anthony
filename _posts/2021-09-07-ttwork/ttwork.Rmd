@@ -187,6 +187,7 @@ nurses_new %>%
     labs(x = "Total Number of RNs", 
          y = "Income Inequality Percent", 
         title = "Which States' Have a Greater Discrepancy In Pay for RN's?") +
+    scale_x_continuous(labels = scales::comma) +
     theme_classic() +
     theme(
     panel.background = element_rect(fill = "#CBC3E3"), 
@@ -229,17 +230,19 @@ survivor <-
 ```{r, cache=TRUE}
     ggplot(survivor, aes(x = season, y = viewers_premier)) +
     geom_line(size = 2, color = "#17c6e0") +
-    geom_text(aes(label= season), color = "navy", hjust=0, vjust=0, size=4, check_overlap = TRUE) +
-    geom_hline(yintercept = mean(survivor$viewers_premier), color = "red") +
-    geom_hline(yintercept = median(survivor$viewers_premier), color = "blue") +
+    geom_point(size = 3, color = "#006400") +
+    geom_hline(aes(yintercept = mean(viewers_premier)), color = "red") +
+    geom_hline(aes(yintercept = median(viewers_premier)), color = "blue") +
     labs(x = "Season Number", 
          y = "Premier Episode Viewership (millions)", 
-        title = "Survivor Premier Viewership, with Reference to Average and Median Premier") +
+        title = "Survivor Premier Viewership, with Reference to Mean and Median Premier") +
     theme_classic() +
     theme(
     panel.background = element_rect(fill = "#Dae017"), 
     plot.background = element_rect(fill = "#17c6e0"), 
-    text = element_text(color = "navy", size = 11)) 
+    text = element_text(color = "navy", size = 11))  +
+    geom_text(aes(0, mean(viewers_premier), label = "Mean", vjust = -0.7, hjust = -15.5)) +
+    geom_text(aes(0, median(viewers_premier), label = "Median", vjust = 1.4, hjust = -11.7)) 
 ```
 
 **How has Survivor enthusiasm changed over the seasons, as it relates to season premier viewership?** 
